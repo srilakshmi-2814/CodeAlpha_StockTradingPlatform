@@ -32,14 +32,23 @@ class Portfolio{
         holdings.put(stock, holdings.getOrDefault(stock,0)+qty);
         history.add(new Transaction("BUY", stock, qty, price));
     } 
-    void sell(String stock, int qty, double price){
-        if(holdings.containsKey(stock)&&holdings.get(stock)>=qty){
-            holdings.put(stock,holdings.get(stock)-qty);
-            history.add(new Transaction("SELL",stock,qty,price));
-        } else{
-        System.out.println("Not enough shares!");
-        }
+    
+boolean sell(String stock, int qty, double price) {
+    if (qty <= 0) {
+        System.out.println("Quantity must be greater than zero.");
+        return false;
     }
+
+    if (!holdings.containsKey(stock) || holdings.get(stock) < qty) {
+        System.out.println("Not enough shares!");
+        return false;
+    }
+
+    holdings.put(stock, holdings.get(stock) - qty);
+    history.add(new Transaction("SELL", stock, qty, price));
+
+    return true;
+}
     double getValue(Map<String, Stock> marketStocks){
         double total=0;
         for(String stock: holdings.keySet()){
