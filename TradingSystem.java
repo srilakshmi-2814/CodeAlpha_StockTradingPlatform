@@ -129,17 +129,20 @@ public class TradingSystem{
                         }
                         break;
                 case 3:
-                    System.out.print("Enter Stock name: ");
-                    String sellStock=sc.next().toUpperCase();
-                    System.out.println("Quantity: ");
-                    int sqty = sc.nextInt();
-                    if(market.stocks.containsKey(sellStock)){
-                        double price = market.stocks.get(sellStock).price;
-                        user.portfolio.sell(sellStock,sqty,price);
-                        user.balance+=price*sqty;
-                        System.out.println("Sold!");
-                    }
+                  System.out.print("Enter stock name: ");
+                  String sellStock = sc.next().toUpperCase();
+                  System.out.print("Quantity: ");
+                  int sqty = sc.nextInt();
+                  if (!market.stocks.containsKey(sellStock)) {
+                    System.out.println("Stock not found!");
                     break;
+                  }
+                  double price = market.stocks.get(sellStock).price;
+                 if (user.portfolio.sell(sellStock, sqty, price)) {
+                 user.balance += price * sqty;
+                 System.out.println("Sold successfully!");
+                 }
+                 break;    
                 case 4:
                     user.portfolio.display();
                     double total=user.portfolio.getValue(market.stocks);
