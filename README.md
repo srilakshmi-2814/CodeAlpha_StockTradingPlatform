@@ -1,51 +1,61 @@
-# Stock Trading Platform
+# Java Stock Trading Simulation
 
-A Java-based stock trading simulation project developed to practice programming and explore basic trading operations.
+A console-based stock trading simulation built using Java. This project models a simple stock market and lets users buy and sell shares, view portfolio holdings, and save or load portfolio data.
 
-## About the Project
+## Features
 
-This project is part of my Java development practice. It provides an opportunity to apply programming concepts to a stock trading simulation.
+- **Market Simulation:** Simulates stock price changes for TCS, INFY, and RELIANCE.
+- **Buy Stocks:** Purchase shares when sufficient balance is available.
+- **Sell Stocks:** Sell shares subject to available holdings.
+- **Portfolio Management:** View share quantities, portfolio value, balance, and total wealth.
+- **File Handling:** Save and load balance and share holdings using a text file.
+- **Transaction Tracking:** Records buy and sell transactions during the current program session.
 
 ## Technologies Used
 
 - Java
-- Object-Oriented Programming concepts, where implemented
+- Object-Oriented Programming (OOP)
+- Java Collections Framework
+- File Handling and I/O
+- Exception Handling
+- Console-Based User Interaction
 
-## Project Structure
+## How to Run
 
-- `TradingSystem.java` — Main Java source file for the trading system.
+**Prerequisite:** Install the Java Development Kit (JDK).
 
-## Getting Started
+Clone the repository:
 
-### Prerequisites
+```bash
+git clone https://github.com/srilakshmi-2814/CodeAlpha_StockTradingPlatform.git
+```
 
-- Java Development Kit (JDK)
-- A code editor or terminal
+Open the project folder:
 
-### Run the Project
+```bash
+cd CodeAlpha_StockTradingPlatform
+```
 
-1. Clone this repository:
+Compile and run:
 
-   ```bash
-   git clone https://github.com/srilakshmi-2814/CodeAlpha_StockTradingPlatform.git
-   ```
+```bash
+javac TradingSystem.java
+java TradingSystem
+```
 
-2. Open the project directory:
-   ```bash
-   cd CodeAlpha_StockTradingPlatform
-   ```
-3. Compile the Java file:
-   ```bash
-   javac TradingSystem.java
-   ```
-4. Run the program:
-   ```bash
-   java TradingSystem
-   ```
-## Learning Objectives
-- Practice Java programming.
-- Apply problem-solving skills.
-- Explore how a simple trading system can be represented in code.
+## Future Improvements
+
+- Add input validation and robust error handling.
+- Display and save transaction history.
+- Add automated tests.
+- Develop a graphical user interface.
+
+## Disclaimer
+
+This is an educational simulation. Stock prices are randomly generated and do not represent real-time market data.
+
 ## Author
+
 Sri Lakshmi Mondru
+
 GitHub: [srilakshmi-2814](https://github.com/srilakshmi-2814)
